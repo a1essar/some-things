@@ -18,6 +18,12 @@
 
 `pecl install memcached-2.2.0`
 
+Указать путь до libmemcached
+
+### Установить xdebug
+
+`pecl install xdebug-2.5.5`
+
 ### Установить composer
 
 `brew install composer`
@@ -72,10 +78,6 @@
 
 `brew install nginx`
 
-`brew services list`
-
-`brew services start nginx`
-
 `sudo apachectl stop`
 
 `sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/`
@@ -126,4 +128,4 @@ http {
 `sudo echo "127.0.0.1 gam.bit" >> /private/etc/hosts`
 
 ### Перезапустить сервер
-`brew services restart nginx`
+`sudo nginx -s reload`
