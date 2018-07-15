@@ -38,6 +38,8 @@
 
 `grunt`
 
+`bash mkdirs`
+
 ### Запустить сервер php в фоне
 
 `sudo vim /Library/LaunchDaemons/homebrew.mxcl.php56.plist`
@@ -103,7 +105,7 @@ http {
     default_type application/octet-stream;
     sendfile on;
     keepalive_timeout 65;
-    
+
     # Compression config
     gzip on;
     gzip_min_length 1000;
@@ -113,22 +115,25 @@ http {
     gzip_vary on;
     gzip_disable "MSIE [1-6]\.(?!.*SV1)";
 
+    ssi on;
+
     server {
         listen 80;
         root /path/to/gambit/web;
         server_name localhost gam.bit;
 
         location / {
-            index index.php index.html index.htm;
-        }
-
-        location ~ \.php$ {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
             proxy_pass http://localhost:8000;
         }
     }
 
     include servers/*;
 }
+
 ```
 
 Заменить путь `/path/to/gambit/web` на актуальный
@@ -138,3 +143,5 @@ http {
 
 ### Перезапустить сервер
 `sudo nginx -s reload`
+
+Проверяем по адресу http://gam.bit/
