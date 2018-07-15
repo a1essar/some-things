@@ -103,6 +103,15 @@ http {
     default_type application/octet-stream;
     sendfile on;
     keepalive_timeout 65;
+    
+    # Compression config
+    gzip on;
+    gzip_min_length 1000;
+    gzip_buffers 4 32k;
+    gzip_proxied any;
+    gzip_types text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
+    gzip_vary on;
+    gzip_disable "MSIE [1-6]\.(?!.*SV1)";
 
     server {
         listen 80;
