@@ -1,28 +1,39 @@
-## Настройка окружения
-# macOS high sierra
-* Установить Homebrew
+# Настройка окружения
+## macOS high sierra
+### Установить Homebrew
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-* Установить php 5.6
+### Установить php 5.6
 `brew install php@5.6`
+
 `brew install brew-php-switcher`
+
 `brew-php-switcher 5.6`
+
 Проверить версию в терминале `php -v`
 
-* Установить memcached
+### Установить memcached
+
 `brew install libmemcached`
+
 `pecl install memcached-2.2.0`
 
-* Установить composer
+### Установить composer
+
 `brew install composer`
 
-* Установить зависимости
+### Установить зависимости
+
 `cd /path/to/gambit`
+
 `composer install`
+
 `npm i`
+
 `grunt`
 
-* Запустить сервер php в фоне:
+### Запустить сервер php в фоне
+
 `sudo vim /Library/LaunchDaemons/homebrew.mxcl.php56.plist`
 
 Добавить и сохранить:
@@ -57,18 +68,26 @@
 Выполнить
 `sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.php56.plist`
 
-* Установить nginx
+### Установить nginx
+
 `brew install nginx`
+
 `brew services list`
+
 `brew services start nginx`
+
 `sudo apachectl stop`
+
 `sudo cp -v /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/`
+
 `sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist`
+
 `sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist`
+
 `sudo nginx`
 Проверить по адресу http://localhost/
 
-* Отредактировать конфиг `/usr/local/etc/nginx/nginx.conf`
+### Отредактировать конфиг `/usr/local/etc/nginx/nginx.conf`
 
 ```
 worker_processes 1;
@@ -103,8 +122,8 @@ http {
 
 Заменить путь `/path/to/gambit/web` на актуальный
 
-* Добавить симлинк в hosts
+### Добавить симлинк в hosts
 `sudo echo "127.0.0.1 gam.bit" >> /private/etc/hosts`
 
-* Перезапустить сервер
+### Перезапустить сервер
 `brew services restart nginx`
