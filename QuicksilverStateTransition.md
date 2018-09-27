@@ -11,7 +11,7 @@
 ||VideoStore.showErrorScreen()|Ошибка|
 |Эндскрин|VideoStore.openEndscreenAfterRestrictCheck() -> CoreStore.reinitialize()|Контент|
 |Ошибка|Сохранить лог|-|
-|Ошибка|Переход на ask.ivi.ru|-|
+|Ошибка|Переход на ask|-|
 
 Начальное состояние: Запуск
 
