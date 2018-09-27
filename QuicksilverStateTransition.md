@@ -12,6 +12,7 @@
 |Эндскрин|VideoStore.openEndscreenAfterRestrictCheck() -> CoreStore.reinitialize()|Контент|
 |Ошибка|Сохранить лог|-|
 |Ошибка|Переход на ask.ivi.ru|-|
+
 Начальное состояние: Запуск
 
 ### Таблица переходов состояний рекламы
