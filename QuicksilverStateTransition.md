@@ -7,7 +7,7 @@
 |Реклама|AdvRenderMixin.returnToVideo() -> VideoStore.playerClick()|Контент|
 ||AdvRenderMixin.playNextAdv()|Реклама|
 |Контент|VideoStore.checkAdvMarks()|Реклама|
-|||Эндскрин|
+||VideoStore.handleEndScreen()|Эндскрин|
 ||VideoStore.showErrorScreen()|Ошибка|
 |Эндскрин|VideoStore.openEndscreenAfterRestrictCheck() -> CoreStore.reinitialize()|Контент|
 |Ошибка|Сохранить лог|-|
