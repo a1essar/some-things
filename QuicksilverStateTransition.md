@@ -3,10 +3,10 @@
 ### Таблица переходов основных состояний
 |Текущее состояние|Условие перехода|Следующее состояние|
 |--|--|--|
-|Запуск|VideoStore.playerClick() -> VideoStore.startPreroll()|Реклама|
+|Сплешскрин|VideoStore.playerClick() -> VideoStore.startPreroll()|Реклама|
 |Реклама|AdvRenderMixin.returnToVideo() -> VideoStore.playerClick()|Контент|
 ||AdvRenderMixin.playNextAdv()|Реклама|
-|Контент|VideoStore.checkAdvMarks()|Реклама|
+|Воспроизведение|VideoStore.checkAdvMarks()|Реклама|
 ||VideoStore.handleEndScreen()|Эндскрин|
 ||VideoStore.showErrorScreen()|Ошибка|
 |Эндскрин|VideoStore.openEndscreenAfterRestrictCheck() -> CoreStore.reinitialize()|Контент|
@@ -15,7 +15,7 @@
 
 Начальное состояние: Запуск
 
-### Таблица переходов состояний контента
+### Таблица переходов состояний воспроизведения
 |Текущее состояние|Условие перехода|Следующее состояние|
 |--|--|--|
 |Запуск|VideoStore.playerClick() -> VideoStore.startPreroll()|Реклама|
