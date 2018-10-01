@@ -4,12 +4,12 @@
 |Текущее состояние|Условие перехода|Следующее состояние|
 |--|--|--|
 |Сплешскрин|VideoStore.playerClick() -> VideoStore.startPreroll()|Реклама|
-|Реклама|AdvRenderMixin.returnToVideo() -> VideoStore.playerClick()|Контент|
+|Реклама|AdvRenderMixin.returnToVideo() -> VideoStore.playerClick()|Воспроизведение|
 ||AdvRenderMixin.playNextAdv()|Реклама|
 |Воспроизведение|VideoStore.checkAdvMarks()|Реклама|
 ||VideoStore.handleEndScreen()|Эндскрин|
 ||VideoStore.showErrorScreen()|Ошибка|
-|Эндскрин|VideoStore.openEndscreenAfterRestrictCheck() -> CoreStore.reinitialize()|Контент|
+|Эндскрин|VideoStore.openEndscreenAfterRestrictCheck() -> CoreStore.reinitialize()|Воспроизведение|
 |Ошибка|Сохранить лог|-|
 |Ошибка|Переход на ask|-|
 
